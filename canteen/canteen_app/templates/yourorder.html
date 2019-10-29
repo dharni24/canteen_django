@@ -1,0 +1,76 @@
+<!Doctype html>
+<html>
+<head>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<title>home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+
+   
+</head>
+<body >
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+      <a class="navbar-brand" href="#">CEG Canteen</a>
+    </div>
+     <div class="collapse navbar-collapse" id="myNavbar">
+     <ul class="nav navbar-nav">
+      <li><a href="{% url 'student' %}">Home</a></li>
+      <li ><a href="{% url 'view_menu' %}">view menu</a></li>
+      <li ><a href="{% url 'placeorder' %}">place order</a></li>
+      <li><a href="{% url 'yourorder' %}">your order</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+  <li><a href="{% url 'wallet' %}">wallet</a></li>
+  <li><a href="{% url 'indexstu' %}">logout</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<div class="container">
+
+<h1><br><br><br><br>YOUR ORDERS</h1>
+	<div class="row">
+	<div class="col-sm-7">
+	<table class="table table-striped" id="mytable">
+    <thead>
+      <tr>
+        <th>Order Id</th>
+        <th>Description</th>
+        <th>total</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr>
+        <td>{{order_id}}</td>
+        <td>{{desc}}</td>
+        <td>{{total}}</td>
+       </tr>
+   </tbody>
+   </table>
+   </div>
+   <div class="col-sm-5">
+    <form action="{% url 'order_req' %}" method='get'>
+   <p>Enter order id</p>
+   <p><input type="text" id="oid" name='oid'>
+   <input type="submit" value="show details"></p></form>
+   </div>
+    </div>
+</div>
+<script src="yourorder.js"></script>
+</body>
+</html>

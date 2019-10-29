@@ -1,0 +1,290 @@
+<!Doctype html>
+<html>
+<head>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<title>home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+
+   
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+      <a class="navbar-brand" href="#">CEG Canteen</a>
+    </div>
+     <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li><a href="student.html">Home</a></li>
+      <li ><a href="viewmenu.html">view menu</a></li>
+      <li ><a href="placeorder.html">place order</a></li>
+      <li><a href="yourorder.html">your order</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+	<li><a href="wallet.html">wallet</a></li>
+	<li><a href="indexstu.html">logout</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<p><br><br><br><br></p>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+
+        <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#bf">breakfast</a></li>
+        <li><a data-toggle="tab" href="#af">lunch</a></li>
+        <li><a data-toggle="tab" href="#eve">snacks</a></li>
+		<li><a data-toggle="tab" href="#nit">dinner</a></li>
+        </ul>
+
+        <div class="tab-content">
+        <div id="bf" class="tab-pane fade in active">
+        
+		<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>chapathi</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td>dhosa</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>ghee roast</td>
+        <td>15</td>
+      </tr>
+	    <tr>
+        <td>idly</td>
+        <td>5</td>
+      </tr>
+	  
+	    <tr>
+        <td>juice</td>
+        <td>15</td>
+      </tr>
+       <tr>
+        <td>parotta</td>
+        <td>20</td>
+      </tr>
+          <tr>
+        <td>pongal</td>
+        <td>25</td>
+      </tr>
+       <tr>
+        <td>poori</td>
+        <td>15</td>
+      </tr>
+         <tr>
+        <td>tea</td>
+        <td>8</td>
+      </tr>
+       <tr>
+        <td>coffee</td>
+        <td>7</td>
+      </tr>
+    
+    
+    </tbody>
+  </table>
+		
+		</div>
+		<div id="af" class="tab-pane fade">
+		
+		<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Chicken biriyani</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <td>dhosa</td>
+        <td>10</td>
+      </tr>
+      <tr>
+        <td>ghee roast</td>
+        <td>15</td>
+      </tr>
+	    <tr>
+        <td>Egg biriyani</td>
+        <td>35</td>
+      </tr>
+	  
+	    <tr>
+        <td>juice</td>
+        <td>15</td>
+      </tr>
+       <tr>
+        <td>Mini meals</td>
+        <td>35</td>
+      </tr>
+          <tr>
+        <td>Sambar rice</td>
+        <td>15</td>
+      </tr>
+       <tr>
+        <td>Tomato rice</td>
+        <td>20</td>
+      </tr>
+    
+    </tbody>
+  </table>
+		
+		</div>
+		<div id="eve" class="tab-pane fade">
+		
+		<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Chicken noodles</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <td>Chicken rice</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <td>Chilli parotta</td>
+        <td>35</td>
+      </tr>
+	    <tr>
+        <td>Cholla puri</td>
+        <td>15</td>
+      </tr>
+	  
+	    <tr>
+        <td>Coffee</td>
+        <td>7</td>
+      </tr>
+       <tr>
+        <td>Dhosa</td>
+        <td>10</td>
+      </tr>
+          <tr>
+        <td>Egg noodles</td>
+        <td>35</td>
+      </tr>
+       <tr>
+        <td>Egg rice</td>
+        <td>35</td>
+      </tr>
+         <tr>
+        <td>Ghee roast</td>
+        <td>15</td>
+      </tr>
+       <tr>
+        <td>Juice</td>
+        <td>15</td>
+      </tr>
+       <tr>
+        <td>Pav baaji</td>
+        <td>15</td>
+      </tr>
+	  
+       <tr>
+        <td>Tea</td>
+        <td>8</td>
+      </tr>
+    
+    
+    
+    </tbody>
+  </table>
+		</div>
+		<div id="nit" class="tab-pane fade">
+		
+		<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Chicken noodles</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <td>Chicken rice</td>
+        <td>53</td>
+      </tr>
+      <tr>
+        <td>Coffee</td>
+        <td>7</td>
+      </tr>
+	    <tr>
+        <td>Dhosa</td>
+        <td>10</td>
+      </tr>
+	  
+	    <tr>
+        <td>Egg noodles</td>
+        <td>35</td>
+      </tr>
+       <tr>
+        <td>Egg rice</td>
+        <td>35</td>
+      </tr>
+          <tr>
+        <td>Ghee roast</td>
+        <td>15</td>
+      </tr>
+       <tr>
+        <td>Juice</td>
+        <td>15</td>
+      </tr>
+         <tr>
+        <td>Kothu parotta</td>
+        <td>35</td>
+      </tr>
+       <tr>
+        <td>Tea</td>
+        <td>8</td>
+      </tr>
+    
+    
+    </tbody>
+  </table>
+		</div>
+		</div>
+	    </div>
+	</div>
+</div>
+
+</body>
+</html>

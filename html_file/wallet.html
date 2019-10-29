@@ -1,0 +1,65 @@
+<!Doctype html>
+<html>
+<head>
+
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/785A2D27-6A66-C84C-B8A9-64279DC4998B/main.js" charset="UTF-8"></script><script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<title>home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+
+   <style>
+    body{
+        padding-top:70px;
+     }
+    .effects {
+         padding-top:10px;
+         font-family: 'Berkshire Swash' ; 
+         text-align : center ; 
+         background-color : rgb(211,211,211);   
+         padding-bottom:10px;
+      }
+     h4{
+       font-weight: bold;
+     }
+  </style>
+</head>
+<body onload="yourorder()">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+      <a class="navbar-brand" href="#">CEG Canteen</a>
+    </div>
+     <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li><a href="student.html">Home</a></li>
+      <li ><a href="viewmenu.html">view menu</a></li>
+      <li ><a href="placeorder.html">place order</a></li>
+      <li><a href="yourorder.html">your order</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+	<li><a href="wallet.html">wallet</a></li>
+	<li><a href="indexstu.html">logout</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<h4 align="center"><br><br><br><br>YOUR BALANCE</h4>
+<div class="container">
+	<p class="effects" id="balance"></p>
+</div>
+
+<script src="wallet.js"></script>
+</body>
+</html>

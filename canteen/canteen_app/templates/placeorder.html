@@ -1,0 +1,540 @@
+<!Doctype html>
+<html>
+<head>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<title>home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+<style>
+.bt
+{
+float :right;
+}
+</style>   
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+      <a class="navbar-brand" href="#">CEG Canteen</a>
+    </div>
+     <div class="collapse navbar-collapse" id="myNavbar">
+     <ul class="nav navbar-nav">
+      <li><a href="{% url 'student' %}">Home</a></li>
+      <li ><a href="{% url 'view_menu' %}">view menu</a></li>
+      <li ><a href="{% url 'placeorder' %}">place order</a></li>
+      <li><a href="{% url 'yourorder' %}">your order</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+  <li><a href="{% url 'wallet' %}">wallet</a></li>
+  <li><a href="{% url 'indexstu' %}">logout</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<p><br><br><br><br></p>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+
+        <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#bf">breakfast</a></li>
+        <li><a data-toggle="tab" href="#af">lunch</a></li>
+        <li><a data-toggle="tab" href="#eve">snacks</a></li>
+		<li><a data-toggle="tab" href="#nit">dinner</a></li>
+        </ul>
+
+        <div class="tab-content">
+        <div id="bf" class="tab-pane fade in active">
+        
+		<div class="list-group">
+		
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Dhosa
+	<div class="bt">
+		<input type="number" id="dhosam" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('dhosa',10,document.getElementById('dhosam').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Chapathi
+	<div class="bt">
+		<input type="number" id="chapathim" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('chapathi',20,document.getElementById('chapathim').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Coffee
+	<div class="bt">
+		<input type="number" id="coffeem" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('coffee',7,document.getElementById('coffeem').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Ghee roast
+	<div class="bt">
+		<input type="number" id="ghee_roastm" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('ghee_roast',15,document.getElementById('ghee_roastm').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">idly
+	<div class="bt">
+		<input type="number" id="idlym" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('idly',5,document.getElementById('idlym').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Juice
+	<div class="bt">
+		<input type="number" id="juicem" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('juice',15,document.getElementById('juicem').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Parotta
+	<div class="bt">
+		<input type="number" id="parottam" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('parotta',20,document.getElementById('parottam').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Pongal
+	<div class="bt">
+		<input type="number" id="pongalm" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('pongal',25,document.getElementById('pongalm').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Puri
+	<div class="bt">
+		<input type="number" id="purim" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('puri',15,document.getElementById('purim').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Tea
+	<div class="bt">
+		<input type="number" id="team" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodb('tea',8,document.getElementById('team').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  
+  
+  
+  
+  
+  
+</div>
+<h1>YOUR ORDER : </h1>
+<table class="table table-striped" id="bf_table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+		<th>Price</th>
+      </tr>
+    </thead>
+</table>
+<h3>TOTAL : <spam id="totalb">0</spam></h3>
+<button onclick="submit_bf()">submit</button>
+		</div>
+		<div id="af" class="tab-pane fade">
+		
+		<div class="list-group">
+		
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Dhosa
+	<div class="bt">
+		<input type="number" id="dhosaa" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfooda('dhosa',10,document.getElementById('dhosaa').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Chicken Biriyani
+	<div class="bt">
+		<input type="number" id="cba" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfooda('chicken_biriyani',53,document.getElementById('cba').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Egg biriyani
+	<div class="bt">
+		<input type="number" id="eba" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfooda('egg_biriyani',35,document.getElementById('eba').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Ghee roast
+	<div class="bt">
+		<input type="number" id="gra" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfooda('ghee_roast',15,document.getElementById('gra').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Mini meals
+	<div class="bt">
+		<input type="number" id="mma" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfooda('mini_meals',35,document.getElementById('mma').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Juice
+	<div class="bt">
+		<input type="number" id="dhosam" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfooda('juice',15,document.getElementById('dhosam').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Sambar rice
+	<div class="bt">
+		<input type="number" id="sra" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfooda('sambar_rice',15,document.getElementById('sra').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Tomato rice
+	<div class="bt">
+		<input type="number" id="tra" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfooda('tomato_rice',20,document.getElementById('tra').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  	</div>
+	<h1>YOUR ORDER : </h1>
+<table class="table table-striped" id="af_table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+		<th>Price</th>
+      </tr>
+    </thead>
+</table>
+<h3>TOTAL : <spam id="totala">0</spam></h3>
+<button onclick="submit_af()">submit</button>
+	</div>
+		<div id="eve" class="tab-pane fade">
+		
+	
+		<div class="list-group">
+		
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Dhosa
+	<div class="bt">
+		<input type="number" id="dhosae" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('dhosa',10,document.getElementById('dhosae').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Chicken noodles
+	<div class="bt">
+		<input type="number" id="cne" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('chicken_noodles',53,document.getElementById('cne').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Coffee
+	<div class="bt">
+		<input type="number" id="coffeee" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('coffee',7,document.getElementById('coffeee').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Ghee roast
+	<div class="bt">
+		<input type="number" id="gre" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('ghee_roast',15,document.getElementById('gre').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Chicken rice
+	<div class="bt">
+		<input type="number" id="cre" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('chicken_rice',53,document.getElementById('cre').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Juice
+	<div class="bt">
+		<input type="number" id="juicee" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('juice',15,document.getElementById('juicee').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Chilli parotta
+	<div class="bt">
+		<input type="number" id="cpe" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('chilli_parotta',35,document.getElementById('cpe').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Pav baaji
+	<div class="bt">
+		<input type="number" id="pbe" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('pav_baaji',15,document.getElementById('pbe').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Cholla puri
+	<div class="bt">
+		<input type="number" id="purie" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('cholla_puri',15,document.getElementById('purie').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Tea
+	<div class="bt">
+		<input type="number" id="teae" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('tea',8,document.getElementById('teae').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Egg rice
+	<div class="bt">
+		<input type="number" id="ere" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('egg_rice',35,document.getElementById('ere').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Egg noodles
+	<div class="bt">
+		<input type="number" id="ene" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoode('egg_noodles',35,document.getElementById('ene').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+</div>
+<h1>YOUR ORDER : </h1>
+<table class="table table-striped" id="eve_table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+		<th>Price</th>
+      </tr>
+    </thead>
+</table>
+<h3>TOTAL : <spam id="totale">0</spam></h3>
+<button onclick="submit_eve()">submit</button>
+	</div>
+		<div id="nit" class="tab-pane fade">
+		
+		
+	
+		<div class="list-group">
+		
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Dhosa
+	<div class="bt">
+		<input type="number" id="dhosan" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('dhosa',10,document.getElementById('dhosan').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Chicken noodles
+	<div class="bt">
+		<input type="number" id="cnn" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('chicken_noodles',53,document.getElementById('cnn').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Coffee
+	<div class="bt">
+		<input type="number" id="coffeen" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('coffee',7,document.getElementById('coffeen').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Ghee roast
+	<div class="bt">
+		<input type="number" id="grn" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('ghee_roast',15,document.getElementById('grn').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Chicken rice
+	<div class="bt">
+		<input type="number" id="crn" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('chicken_rice',53,document.getElementById('crn').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Juice
+	<div class="bt">
+		<input type="number" id="juicen" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('juice',15,document.getElementById('juicen').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Kothu parotta
+	<div class="bt">
+		<input type="number" id="kpn" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('kothu_parotta',35,document.getElementById('kpn').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Tea
+	<div class="bt">
+		<input type="number" id="tean" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('tea',8,document.getElementById('tean').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Egg rice
+	<div class="bt">
+		<input type="number" id="ern" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('egg_rice',35,document.getElementById('ern').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+  
+  <a href="#" class="list-group-item ">
+    <h3 class="list-group-item-heading">Egg noodles
+	<div class="bt">
+		<input type="number" id="enn" size="1" >
+	<button type="button" class="btn btn-default btn-sm" onclick="addfoodn('egg_noodles',35,document.getElementById('enn').value)"><span class="glyphicon glyphicon-plus"></span></button>
+   </div>
+   </h3>
+  </a>
+</div>
+<h1>YOUR ORDER : </h1>
+
+<table class="table table-striped" id="nit_table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+		<th>Price</th>
+      </tr>
+    </thead>
+</table>
+<h3>TOTAL : <spam id="totaln">0</spam></h3>
+<form action = "{% url 'place_req' %}" method="get">
+<input type="text" name="totalvaln">
+<input type="submit" value="submit">
+</form>
+</div>
+
+
+<script >
+   var totaln=0,totala=0,totalb=0,totale=0;
+  function addfoodb(name,price,amount){
+    var nit_table = document.getElementById('bf_table');
+    var rowCnt = bf_table.rows.length;        // GET TABLE ROW COUNT.
+    var tr = bf_table.insertRow(rowCnt);      // TABLE ROW.
+    //tr = nit_table.insertRow(rowCnt);
+    var td = document.createElement('td');
+    td = tr.insertCell(0);
+    td.innerHTML = name;
+    td = tr.insertCell(1);
+    td.innerHTML = amount;
+     td = tr.insertCell(2);
+    td.innerHTML = amount*price;
+    totalb = totalb + amount*price;
+    document.getElementById('totalb').innerHTML = totalb ;
+  }
+  function addfooda(name,price,amount){
+    var nit_table = document.getElementById('af_table');
+    var rowCnt = af_table.rows.length;        // GET TABLE ROW COUNT.
+    var tr = af_table.insertRow(rowCnt);      // TABLE ROW.
+    //tr = nit_table.insertRow(rowCnt);
+    var td = document.createElement('td');
+    td = tr.insertCell(0);
+    td.innerHTML = name;
+    td = tr.insertCell(1);
+    td.innerHTML = amount;
+     td = tr.insertCell(2);
+    td.innerHTML = amount*price;
+    totala = totala + amount*price;
+    document.getElementById('totala').innerHTML = totala ;
+  }
+  function addfoode(name,price,amount){
+    var nit_table = document.getElementById('eve_table');
+    var rowCnt = eve_table.rows.length;        // GET TABLE ROW COUNT.
+    var tr = eve_table.insertRow(rowCnt);      // TABLE ROW.
+    //tr = nit_table.insertRow(rowCnt);
+    var td = document.createElement('td');
+    td = tr.insertCell(0);
+    td.innerHTML = name;
+    td = tr.insertCell(1);
+    td.innerHTML = amount;
+     td = tr.insertCell(2);
+    td.innerHTML = amount*price;
+    totale = totale + amount*price;
+    document.getElementById('totale').innerHTML = totale ;
+  }
+  function addfoodn(name,price,amount){
+   
+    var nit_table = document.getElementById('nit_table');
+    var rowCnt = nit_table.rows.length;        // GET TABLE ROW COUNT.
+    var tr = nit_table.insertRow(rowCnt);      // TABLE ROW.
+    //tr = nit_table.insertRow(rowCnt);
+    var td = document.createElement('td');
+    td = tr.insertCell(0);
+    td.innerHTML = name;
+    td = tr.insertCell(1);
+    td.innerHTML = amount;
+     td = tr.insertCell(2);
+    td.innerHTML = amount*price;
+    totaln = totaln + amount*price;
+    document.getElementById('totaln').innerHTML = totaln ;
+    document.getElementByName('totalvaln').value = totaln;
+
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!Doctype html>
+<html>
+<head>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<title>home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+
+   
+<style>
+    body{
+        padding-top:70px;
+     }
+    .effects {
+         padding-top:10px;
+         font-family: 'Berkshire Swash' ; 
+         text-align : center ; 
+         background-color : rgb(211,211,211);   
+         padding-bottom:10px;
+      }
+     h4{
+       font-weight: bold;
+     }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+       
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    <a class="navbar-brand" href="#">CEG Canteen</a>
+    </div>
+    
+  </div>
+</nav>
+<div class=effects>
+<h4>SIGN UP</h4><br>
+<br>
+<p>ROLLNUMBER:</p><br>
+ <input type="text" id="roll" name="username"><br>
+<p>PASSWORD :</p><br>
+ <input type="password" id="psw" name="psw"><br>
+ 
+ <p>CONFIRM PASSWORD :</p><br>
+ <input type="password" id="cpsw" name="cpsw"><br>
+ 
+
+<p>USERNAME :</p><br>
+<input type="text" id="user" name="user"><br>
+
+ <button onclick="signup(document.getElementById('roll').value,document.getElementById('psw').value,document.getElementById('cpsw').value,document.getElementById('user').value)">submit</button>
+
+<p> <br> <a href="indexstu.html">login</a> </p>
+
+</div>
+
+<script src="signup.js">
+
+</script>
+</body>
